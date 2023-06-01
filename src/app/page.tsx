@@ -65,8 +65,8 @@ export default function Home() {
 
   return (
     <main className="bg-gray-200">
-      <div className="min-h-screen flex gap-4 flex-col justify-center items-center">
-        <h1 className="text-red-500 font-bold text-4xl">
+      <div className="flex min-h-screen flex-col items-center justify-center gap-4">
+        <h1 className="text-4xl font-bold text-red-500">
           Next-Tailwind Starter Template
         </h1>
 
@@ -81,7 +81,7 @@ export default function Home() {
                 return (
                   <button
                     onClick={show}
-                    className="py-2 px-6 bg-green-500 text-white rounded-lg hover:bg-green-600 active:scale-95"
+                    className="rounded-lg bg-green-500 px-6 py-2 text-white hover:bg-green-600 active:scale-95"
                   >
                     {isConnected ? truncatedAddress : 'Custom Connect'}
                   </button>
@@ -91,7 +91,7 @@ export default function Home() {
             {gState['verify'].value && (
               <button
                 onClick={() => Disconnect()}
-                className="py-2 px-6 bg-red-500 text-white rounded-lg hover:bg-red-600 active:scale-95"
+                className="rounded-lg bg-red-500 px-6 py-2 text-white hover:bg-red-600 active:scale-95"
               >
                 Disconnect
               </button>
@@ -107,7 +107,7 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <button
               onClick={getBusdBal}
-              className="py-2 px-6 bg-green-500 text-white rounded-lg hover:bg-green-600 active:scale-95"
+              className="rounded-lg bg-green-500 px-6 py-2 text-white hover:bg-green-600 active:scale-95"
             >
               GET BUSD BALANCE
             </button>
@@ -133,7 +133,7 @@ export default function Home() {
                 />
                 <button
                   onClick={sendBusd}
-                  className="py-2 px-6 bg-green-500 text-white rounded-lg hover:bg-green-600 active:scale-95"
+                  className="rounded-lg bg-green-500 px-6 py-2 text-white hover:bg-green-600 active:scale-95"
                 >
                   SEND
                 </button>
