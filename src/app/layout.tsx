@@ -7,6 +7,7 @@ import { WalletProvider } from '@/context/wallet';
 import '@/styles/globals.css';
 import { Inter } from 'next/font/google';
 import { useEffect, useState } from 'react';
+import { NakamaProvider } from '@/context/nakama';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -54,7 +55,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AlertProvider template={AlertTemplate} {...options}>
-          <WalletProvider>{children}</WalletProvider>
+          <NakamaProvider>
+            <WalletProvider>{children}</WalletProvider>
+          </NakamaProvider>
         </AlertProvider>
       </body>
     </html>

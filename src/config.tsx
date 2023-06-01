@@ -10,6 +10,7 @@ export const blockchainNetwork = ['BSC - Testnet', 'BSC - Mainnet'];
 export const config = [
   {
     api_url: 'https://stg-api.anitolegends.com/v2',
+    wss: 'wss://stg-api.anitolegends.com',
     supported_chains: [bscTestnet] as Chain[],
     providers: [
       jsonRpcProvider({
@@ -21,6 +22,7 @@ export const config = [
   },
   {
     api_url: 'https://stg-api.anitolegends.com/v2',
+    wss: 'wss://stg-api.anitolegends.com',
     supported_chains: [bsc] as Chain[],
     providers: [publicProvider()],
   },

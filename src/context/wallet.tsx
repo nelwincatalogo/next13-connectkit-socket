@@ -19,6 +19,7 @@ import CONFIG from '@/config';
 import { useGlobalState } from '@/store';
 import axios, { BLOCKCHAIN } from '@/api';
 import { ConnectKitProvider } from 'connectkit';
+import { useNakamaContext } from './nakama';
 
 const { chains, provider, webSocketProvider } = configureChains(
   CONFIG.setting.supported_chains,
@@ -50,6 +51,7 @@ export const useWalletContext = () => useContext(WalletContext);
 export function WalletProvider({ children }: { children: React.ReactNode }) {
   const alert = useAlert();
   const gState = useGlobalState();
+  const { socketInitializer } = useNakamaContext();
   const { address, isConnecting, isDisconnected, isConnected, status } =
     useAccount();
   const [ctxContract, setCtxContract] = useState(null as any);
@@ -70,6 +72,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
   // onVerified Listener
   const onVerified = async () => {
     await loadContract();
+    await socketInitializer(gState['verify'].value.user);
   };
 
   /**
