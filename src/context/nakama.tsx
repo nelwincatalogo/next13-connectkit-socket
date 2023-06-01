@@ -33,7 +33,7 @@ export function NakamaProvider({ children }) {
       console.log('socket connected');
     });
     newSocket.on('disconnect', (reason) => {
-      console.log(reason);
+      console.log('socket:', reason);
       // else the socket will automatically try to reconnect
     });
 
